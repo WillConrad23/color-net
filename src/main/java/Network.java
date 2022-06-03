@@ -13,15 +13,15 @@ public class Network {
       double[][] trainingDataInputs = d.getInputs();
 
       double[][] trainingDataTargets = d.getOutputs();
-
+      //NeuralNetwork nn = NeuralNetwork.readFromFile("src/main/resources/rgbModel.json");
       NeuralNetwork nn = new NeuralNetwork(3, 2, 9, 10);
       nn.setActivationFunction(ActivationFunction.SIGMOID);
       nn.setLearningRate(0.01);
-      for (int i = 0; i < 30000000; i++) {
+      for (int i = 0; i < 5000000; i++) {
           // training in random order
           int random = (int)(Math.random() * d.getLength());
           nn.train(trainingDataInputs[random], trainingDataTargets[random]);
-          
+          System.out.println((float)(i) / 5000000 * 100 + "%");
           //if (i % 1000000 == 0) nn.mutate(0.1);
       }
       double correct = 0;
