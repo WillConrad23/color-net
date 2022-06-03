@@ -28,7 +28,7 @@ public class Interpreter {
       // Read all data at once
       allData = csvReader.readAll();
       length = allData.size();
-      System.out.println(length);
+      
 
     } catch(Exception e) {
       e.printStackTrace();

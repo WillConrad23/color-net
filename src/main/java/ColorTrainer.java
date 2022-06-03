@@ -88,7 +88,6 @@ public class ColorTrainer extends ColorLabels implements ActionListener {
   
   @Override
   public void actionPerformed(ActionEvent e) {
-    System.out.println(e);
     String event = e.toString();
     if (event.indexOf("Undo") != -1) //Contains undo
     {
@@ -165,17 +164,17 @@ public class ColorTrainer extends ColorLabels implements ActionListener {
   }
   public static void main(String args[])
   {
-    
-    JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
+    // JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
 
-    chooser.setAcceptAllFileFilterUsed(false);
-    //Limit file selection to text docs so nothing important gets overwritten
-    FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV file", "csv");
-    chooser.addChoosableFileFilter(filter);
+    // chooser.setAcceptAllFileFilterUsed(false);
+    // //Limit file selection to text docs so nothing important gets overwritten
+    // FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV file", "csv");
+    // chooser.addChoosableFileFilter(filter);
     
-    int res = chooser.showOpenDialog(null);
-    if (res == JFileChooser.APPROVE_OPTION) { file = chooser.getSelectedFile(); }
-    else { System.exit(0); }
+    // int res = chooser.showOpenDialog(null);
+    // if (res == JFileChooser.APPROVE_OPTION) { file = chooser.getSelectedFile(); }
+    // else { System.exit(0); }
+    file = new File("src/main/resources/data.csv");
 
     ColorTrainer ct = new ColorTrainer("Color Dataset Trainer");
     //System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Color Trainer");

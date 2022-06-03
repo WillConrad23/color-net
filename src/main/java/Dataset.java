@@ -44,7 +44,7 @@ public class Dataset {
   public int getLength() { return length; }
   public static void main(String[] args)
   {
-    Dataset d = new Dataset("data.csv");
+    Dataset d = new Dataset("src/main/resources/data.csv");
     for (double[] r : d.getInputs())
     {
       for (double c : r)

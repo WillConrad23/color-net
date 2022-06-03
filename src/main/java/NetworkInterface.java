@@ -15,6 +15,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
 import org.ejml.data.Matrix;
+import org.ejml.simple.SimpleMatrix;
 import org.ejml.simple.SimpleOperations;
 
 import basicneuralnetwork.NeuralNetwork;
@@ -207,19 +208,24 @@ public class NetworkInterface extends ColorLabels implements ChangeListener {
       bNum.setText("" + (int)b);
     }
 
-    if (e.getSource() != btn) {
-      pane.setBackground(new Color((int)r,(int)g,(int)b));
-    }
-    else if (e.getSource() == btn)
+    // if (e.getSource() != btn) {
+    //   pane.setBackground(new Color((int)r,(int)g,(int)b));
+    // }
+    if (e.getSource() != btn)
     {
+      pane.setBackground(new Color((int)r,(int)g,(int)b));
+
+
       double[] input = {r/255.0, g/255.0, b/255.0};
       System.out.println(input[0] + " " + input[1] + " " + input[2]);
-      double[] guessArr = nn.guess(input);
-      for (double d : guessArr)
-      {
-        System.out.println((int)(d * 100));
-      }
-      System.out.println();
+     double[] guessArr = nn.guess(input);
+    
+      // for (SimpleMatrix sm : guess)
+      // {
+      //   System.out.println(sm);
+      
+      // }
+      
       for (int i = 0; i < 10; i++)
       {
         int v = (int)(guessArr[i] * 100);
@@ -241,46 +247,7 @@ public class NetworkInterface extends ColorLabels implements ChangeListener {
         pBars[i].setBackground(colors[i].darker());
       
       pBars[largestIndex].setBackground(colors[largestIndex]);
-      // System.out.println((int)(guessArr[largestIndex] * 100));
-      // switch (largestIndex) {
-      //   case 0:
-      //     guess.setText("Red");
-      //     break;
-      //   case 1:
-      //     guess.setText("Orange");
-      //     break;
-      //   case 2:
-      //     guess.setText("Yellow");
-      //     break;
-      //   case 3:
-      //     guess.setText("Green");
-      //     break;
-      //   case 4:
-      //     guess.setText("Blue");
-      //     break;
-      //   case 5:
-      //     guess.setText("Purple");
-      //     break;
-      //   case 6:
-      //     guess.setText("Pink");
-      //     break;
-      //   case 7:
-      //     guess.setText("Brown");
-      //     break;
-      //   case 8:
-      //     guess.setText("White");
-      //     break;
-      //   case 9:
-      //     guess.setText("Black");
-      //     break;
-      //   default: 
-      //     guess.setText("Invalid");
-      //     break;
-      // }
-        
-
     }
-
   }
   
   //Get random color
