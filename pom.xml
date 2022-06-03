@@ -23,8 +23,8 @@
             <groupId>com.kim-marcel.basic_neural_network</groupId>
             <artifactId>basic_neural_network</artifactId>
             <version>v0.5</version>
-            <!-- <scope>system</scope>
-            <systemPath>${project.basedir}/lib/basic_neural_network-v0.5.jar</systemPath> -->
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/basic_neural_network-v0.5-jar-with-dependencies.jar</systemPath>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
