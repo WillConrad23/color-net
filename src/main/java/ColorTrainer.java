@@ -174,7 +174,7 @@ public class ColorTrainer extends ColorLabels implements ActionListener {
     // int res = chooser.showOpenDialog(null);
     // if (res == JFileChooser.APPROVE_OPTION) { file = chooser.getSelectedFile(); }
     // else { System.exit(0); }
-    file = new File("src/main/resources/data.csv");
+    file = new File("src\\main\\resources\\data-95.97.csv");
 
     ColorTrainer ct = new ColorTrainer("Color Dataset Trainer");
     //System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Color Trainer");

@@ -42,26 +42,26 @@ public class Dataset {
   public double[][] getInputs() { return inputs; }
   public double[][] getOutputs() { return outputs; }
   public int getLength() { return length; }
-  public static void main(String[] args)
-  {
-    Dataset d = new Dataset("src/main/resources/data.csv");
-    for (double[] r : d.getInputs())
-    {
-      for (double c : r)
-      {
-        System.out.println(c);
-      }
-      System.out.println();
-    }
+  // public static void main(String[] args)
+  // {
+  //   Dataset d = new Dataset("src/main/resources/data.csv");
+  //   for (double[] r : d.getInputs())
+  //   {
+  //     for (double c : r)
+  //     {
+  //       System.out.println(c);
+  //     }
+  //     System.out.println();
+  //   }
     
-    for (double[] r : d.getOutputs())
-    {
-      for (double c : r)
-      {
-        System.out.println(c);
-      }
-      System.out.println();
-    }
+  //   for (double[] r : d.getOutputs())
+  //   {
+  //     for (double c : r)
+  //     {
+  //       System.out.println(c);
+  //     }
+  //     System.out.println();
+  //   }
 
-  }
+  // }
 }

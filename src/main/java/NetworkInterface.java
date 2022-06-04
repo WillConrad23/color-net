@@ -36,7 +36,7 @@ public class NetworkInterface extends ColorLabels implements ChangeListener {
   private String path = "";
 
   public NetworkInterface() {
-    nn = NeuralNetwork.readFromFile("src/main/resources/rgbModel.json");
+    nn = NeuralNetwork.readFromFile("src/main/resources/rgbModel-95.9923.json");
     //Create the Jframe
     JFrame frame = new JFrame();  
     frame.setSize(500,500);  
@@ -217,8 +217,8 @@ public class NetworkInterface extends ColorLabels implements ChangeListener {
 
 
       double[] input = {r/255.0, g/255.0, b/255.0};
-      System.out.println(input[0] + " " + input[1] + " " + input[2]);
-     double[] guessArr = nn.guess(input);
+      //System.out.println(input[0] + " " + input[1] + " " + input[2]);
+      double[] guessArr = nn.guess(input);
     
       // for (SimpleMatrix sm : guess)
       // {
