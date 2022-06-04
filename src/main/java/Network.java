@@ -11,15 +11,17 @@ public class Network {
   Dataset d;
   private void init()
   {
-    d = new Dataset("src/main/resources/data.csv");
+    d = new Dataset("src/main/resources/bigData.csv");
 
     inputs = d.getInputs();
-
+    System.out.println("IN DONE");
     targets = d.getOutputs();
+    System.out.println("OUT DONE");
 
     nn = new NeuralNetwork(3, 2, 9, 10);
     nn.setActivationFunction(ActivationFunction.SIGMOID);
     nn.setLearningRate(0.01);
+    System.out.println("DONE");
   }
   private void train(int iters)
   {
@@ -27,7 +29,10 @@ public class Network {
       // training in random order
       int random = (int)(Math.random() * d.getLength());
       nn.train(inputs[random], targets[random]);
-      System.out.println((float)(i) / iters * 100 + "%");
+      if (i % (iters / 20) == 0) 
+      {
+        System.out.println((float)(i) / iters * 100 + "%");
+      }
       //if (i % 1000000 == 0) nn.mutate(0.1);
     }
     nn.writeToFile();
@@ -62,7 +67,7 @@ public class Network {
   public static void main(String args[]){
       Network network = new Network();
       network.init();
-      network.train(10);
+      network.train(2000000);
       System.out.println(network.getAccuracy());
       
   }
