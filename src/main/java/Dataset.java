@@ -25,6 +25,7 @@ public class Dataset {
     
     inputs = new double[length][3];
     outputs = new double[length][10];
+    System.out.println("CHECK");
     populate();
   }
   private void populate()
@@ -37,7 +38,13 @@ public class Dataset {
       for (int c = 0; c < 10; c++) {
           outputs[r][c] = Double.parseDouble(row[c+3]);
       }
+
+      if (r % (length / 30) == 0) 
+      {
+        System.out.println((float)(r) / length * 100 + "%eeeee");
+      }
     }
+    System.out.println("CHECK");
   }
   public double[][] getInputs() { return inputs; }
   public double[][] getOutputs() { return outputs; }

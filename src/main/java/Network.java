@@ -16,14 +16,9 @@ public class Network {
     inputs = d.getInputs();
     System.out.println("IN DONE");
     targets = d.getOutputs();
-<<<<<<< HEAD
   }
   private void loadNew()
   {
-=======
-    System.out.println("OUT DONE");
-
->>>>>>> origin/main
     nn = new NeuralNetwork(3, 2, 9, 10);
     nn.setActivationFunction(ActivationFunction.SIGMOID);
     nn.setLearningRate(0.01);
@@ -39,14 +34,10 @@ public class Network {
       // training in random order
       int random = (int)(Math.random() * d.getLength());
       nn.train(inputs[random], targets[random]);
-<<<<<<< HEAD
-      if (i % (iters / 20) == 0) System.out.println((int)((float)(i) / iters * 100) + "%");
-=======
       if (i % (iters / 20) == 0) 
       {
         System.out.println((float)(i) / iters * 100 + "%");
       }
->>>>>>> origin/main
       //if (i % 1000000 == 0) nn.mutate(0.1);
     }
     nn.writeToFile("src\\main\\resources\\rgbModel");
@@ -102,13 +93,9 @@ public class Network {
   public static void main(String args[]){
       Network network = new Network();
       network.init();
-<<<<<<< HEAD
       network.loadNew();
       //network.loadFile("src\\main\\resources\\rgbModel-95.9923.json");
-      network.train(1000000);
-=======
-      network.train(2000000);
->>>>>>> origin/main
+      network.train(30000000);
       System.out.println(network.getAccuracy());
   }
   private float trnct(double n)   
